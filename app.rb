@@ -3,12 +3,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
-
-
-get "/" do
-  erb :home
-end
-
 class Contact < ActiveRecord::Base
   self.table_name = 'sfschema.contact'
 end
@@ -18,6 +12,9 @@ get "/contacts" do
   erb :index
 end
 
+get "/" do
+  erb :home
+end
 
 class Contact < ActiveRecord::Base
   self.table_name = 'salesforce.contact'
